@@ -13,7 +13,7 @@ class ShoppingCartSpec extends AnyFlatSpec with Matchers {
     ShoppingCart.total(Seq(Apple)) shouldEqual Apple.price
     ShoppingCart.total(Seq(Apple, Apple)) shouldEqual Apple.price
     ShoppingCart.total(Seq(Apple, Apple, Apple)) shouldEqual 2 * Apple.price
-    ShoppingCart.total(Seq(Apple, Apple, Apple, Apple)) shouldEqual 3 * Apple.price
+    ShoppingCart.total(Seq(Apple, Apple, Apple, Apple)) shouldEqual 2 * Apple.price
   }
 
   "Shopping Cart" should "apply discount on: 3 for the price of 2 on Oranges" in {

@@ -14,7 +14,7 @@ object Apple extends Product {
 object Orange extends Product {
     def price = 0.25
     def multiPurchaseDiscount(itemAmount: Int): BigDecimal = {
-        Math.floor(itemAmount / 2) * price
+        Math.floor(itemAmount / 3) * price
     }
 }
 
