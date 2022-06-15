@@ -1,19 +1,19 @@
 
 trait Product {
-    def price:Double
-    def multiPurchaseDiscount(itemAmount:Int):Double
+    def price:BigDecimal
+    def multiPurchaseDiscount(itemAmount:Int):BigDecimal
 }
 
 object Apple extends Product {
     def price = 0.60
-    def multiPurchaseDiscount(itemAmount: Int): Double = {
+    def multiPurchaseDiscount(itemAmount: Int): BigDecimal = {
         Math.floor(itemAmount / 2) * price
     }
 }
 
 object Orange extends Product {
     def price = 0.25
-    def multiPurchaseDiscount(itemAmount: Int): Double = {
+    def multiPurchaseDiscount(itemAmount: Int): BigDecimal = {
         Math.floor(itemAmount / 2) * price
     }
 }
