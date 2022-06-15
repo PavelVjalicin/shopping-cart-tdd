@@ -19,14 +19,14 @@ object Orange extends Product {
 }
 
 object ShoppingCart {
-    def total(products:Seq[Product]) = {
+    def total(products:Seq[Product]): BigDecimal = {
         def price = products.map(_.price).sum
         def discount = multiPurchaseDiscountTotal(products)
 
         price - discount
     }
 
-    def multiPurchaseDiscountTotal(products: Seq[Product]) = {
+    private def multiPurchaseDiscountTotal(products: Seq[Product]): BigDecimal = {
         val productTypes = products.toSet
         productTypes.map { product =>
             val productOfTypeCount = products.count(_ == product)
