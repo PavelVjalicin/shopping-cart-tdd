@@ -4,7 +4,7 @@ import org.scalatest.matchers.should.Matchers
 class ShoppingCartSpec extends AnyFlatSpec with Matchers {
   "Shopping Cart" should "output total price of items" in {
     ShoppingCart.total(Seq()) shouldEqual 0
-    ShoppingCart.total(Seq(Apple, Orange)) shouldEqual (Apple.price * Orange.price)
+    ShoppingCart.total(Seq(Apple, Orange)) shouldEqual (Apple.price + Orange.price)
     ShoppingCart.total(Seq(Apple)) shouldEqual Apple.price
     ShoppingCart.total(Seq(Orange)) shouldEqual Orange.price
   }
