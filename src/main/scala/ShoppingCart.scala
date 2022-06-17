@@ -18,6 +18,13 @@ object Orange extends Product {
     }
 }
 
+object Banana extends Product {
+    def price = 0.20
+    def multiPurchaseDiscount(itemAmount: Int): BigDecimal = {
+        Math.floor(itemAmount / 2) * price
+    }
+}
+
 object ShoppingCart {
     def total(products:Seq[Product]): BigDecimal = {
         def price = products.map(_.price).sum
